@@ -54,10 +54,6 @@
 #define BOOSTED_SAMPLING_RATE			(15000)
 #define DBS_INPUT_EVENT_MIN_FREQ		(1026000)
 
-#ifdef CONFIG_CPUFREQ_ID_PERFLOCK
-#define DBS_PERFLOCK_MIN_FREQ			(702000)
-#endif
-
 u64 freq_boosted_time;
 /*
  * The polling frequency of this governor depends on the capability of
