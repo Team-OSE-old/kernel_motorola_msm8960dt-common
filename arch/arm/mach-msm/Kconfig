@@ -1588,31 +1588,18 @@ config MSM_CPU_FREQ_MIN
 
 endif # CPU_FREQ_MSM
 
-config MSM_CPUFREQ_LIMITER
-	tristate "MSM CPU frequency limiter"
+config CPU_OVERCLOCK
+	bool "Enable CPU Overclocking option"
 	default n
 	help
-	  This driver limits MSM CPU frequency through sysfs file system.
+	  Krait overclocking up to 1.9 GHz
 
-	  To compile this driver as a module, choose M here: the
-	  module will be called cpufreq_stats.
-
-	  If in doubt, say N.
-
-config TURBO_BOOST
-	bool "Enable CPU Turbo boost option"
+config CPU_OVERCLOCK_ULTIMATE
+        bool "Enable CPU Overclocking option"
 	depends on CPU_OVERCLOCK
-	default y
-	help
-	  This option allows overclocking of 2 cores to higher clock rate
-	  than stock maximum.  When more than 2 cores are active, the clock
-	  is limited to stock max speeds
-
-config CPU_VOLTAGE_TABLE
-	bool "Enable CPU Voltage Table via sysfs for adjustements"
-	default n
-	help
-	  Krait User Votlage Control
+        default n
+        help
+          Krait overclocking up to 2.1 GHz
 
 config MSM_AVS_HW
 	bool "Enable Adaptive Voltage Scaling (AVS)"
