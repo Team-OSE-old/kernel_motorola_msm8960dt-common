@@ -468,8 +468,10 @@ config SND_SOC_TAS2552
 	tristate
 
 config SND_SOC_TPA6165A2
-	bool "Audio support for tpa6165a2"
-	depends on I2C
-	default n
+	tristate
+
+config SOUND_CONTROL_HAX_GPL
+	tristate "wcd93xx sound control hax"
+	default y
 	help
-	  Audio driver for tpa6165a2 used in ghost and obake
+	  FauxSound WCD93xx chipset sound control hacks
