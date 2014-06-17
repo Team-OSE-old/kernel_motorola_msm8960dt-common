@@ -11,6 +11,8 @@ obj-$(CONFIG_TOUCHSCREEN_SWEEP2WAKE)                += sweep2wake.o
 # for doubletap2wake, leave 1st to avoid merge issues at the end of the file
 obj-$(CONFIG_TOUCHSCREEN_DOUBLETAP2WAKE)        += doubletap2wake.o
 
+obj-$(CONFIG_TOUCHSCREEN_CYTTSP3)       += cyttsp3_core.o
+obj-$(CONFIG_TOUCHSCREEN_CYTTSP3)       += cyttsp3_i2c.o
 obj-$(CONFIG_TOUCHSCREEN_SY3200)	+= sy3200.o
 obj-$(CONFIG_TOUCHSCREEN_SY3400)	+= sy3400.o
 obj-$(CONFIG_TOUCHSCREEN_88PM860X)	+= 88pm860x-ts.o
@@ -100,3 +102,4 @@ obj-$(CONFIG_TOUCHSCREEN_FT5X06)	+= ft5x06_ts.o
 obj-$(CONFIG_TOUCHSCREEN_SYNAPTICS_I2C_RMI4)		+= synaptics_i2c_rmi4.o
 obj-$(CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_RMI4_DEV)	+= synaptics_rmi_dev.o
 obj-$(CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_FW_UPDATE) 	+= synaptics_fw_update.o
+obj-$(CONFIG_TOUCHSCREEN_TOUCHX)	+= touchx.o
