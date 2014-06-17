@@ -42,6 +42,7 @@
 #include <mach/mmi_emu_det.h>
 #include <linux/emu-accy.h>
 #endif
+#endif
 
 #define CHG_BUCK_CLOCK_CTRL	0x14
 #define CHG_BUCK_CLOCK_CTRL_8038	0xD
