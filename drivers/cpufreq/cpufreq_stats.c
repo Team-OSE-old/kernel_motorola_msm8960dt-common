@@ -118,7 +118,7 @@ static int cpufreq_stats_update(unsigned int cpu)
 			cpu3_time_in_state[stat->last_index] +
 			(cur_time - stat->last_time);
 #endif
-=======
+
 	if (stat->time_in_state) {
 		stat->time_in_state[stat->last_index] +=
 			cur_time - stat->last_time;
@@ -126,7 +126,6 @@ static int cpufreq_stats_update(unsigned int cpu)
 			all_stat->time_in_state[stat->last_index] +=
 					cur_time - stat->last_time;
 	}
->>>>>>> cm/cm-11.0
 	stat->last_time = cur_time;
 	spin_unlock(&cpufreq_stats_lock);
 	return 0;
@@ -171,7 +170,6 @@ static ssize_t show_time_in_state(struct cpufreq_policy *policy, char *buf)
 	return len;
 }
 
-<<<<<<< HEAD
 static ssize_t show_overall_time_in_state(struct kobject *kobj,
 						struct attribute *attr, char *buf)
 {
@@ -207,8 +205,6 @@ static ssize_t show_overall_time_in_state(struct kobject *kobj,
 	return len;
 }
 
-
-=======
 static int get_index_all_cpufreq_stat(struct all_cpufreq_stats *all_stat,
 		unsigned int freq)
 {
@@ -265,7 +261,6 @@ out:
 	return len;
 }
 
->>>>>>> cm/cm-11.0
 #ifdef CONFIG_CPU_FREQ_STAT_DETAILS
 static ssize_t show_trans_table(struct cpufreq_policy *policy, char *buf)
 {
@@ -340,15 +335,8 @@ static struct attribute_group stats_attr_group = {
 	.name = "stats"
 };
 
-<<<<<<< HEAD
-static struct attribute_group overall_stats_attr_group = {
-        .attrs = overall_attrs,
-        .name = "overall_stats"
-};
-=======
 static struct kobj_attribute _attr_all_time_in_state = __ATTR(all_time_in_state,
 		0444, show_all_time_in_state, NULL);
->>>>>>> cm/cm-11.0
 
 static int freq_table_get_index(struct cpufreq_stats *stat, unsigned int freq)
 {
@@ -750,15 +738,12 @@ static int __init cpufreq_stats_init(void)
 		cpufreq_update_policy(cpu);
 	}
 
-<<<<<<< HEAD
 	ret = sysfs_create_group(cpufreq_global_kobject, &overall_stats_attr_group);
-=======
 	create_all_freq_table();
 	ret = sysfs_create_file(cpufreq_global_kobject,
 			&_attr_all_time_in_state.attr);
 	if (ret)
 		pr_warn("Error creating sysfs file for cpufreq stats\n");
->>>>>>> cm/cm-11.0
 
 	return 0;
 }
