@@ -337,6 +337,11 @@ static struct attribute_group stats_attr_group = {
 
 static struct kobj_attribute _attr_all_time_in_state = __ATTR(all_time_in_state,
 		0444, show_all_time_in_state, NULL);
+		
+static struct attribute_group overall_stats_attr_group = {
+ .attrs = overall_attrs,
+ .name = "overall_stats"
+};		
 
 static int freq_table_get_index(struct cpufreq_stats *stat, unsigned int freq)
 {
